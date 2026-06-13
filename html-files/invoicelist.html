@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>invoicelist</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Forum&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playpen+Sans:wght@100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="d-flex">
+       <div
+      class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary sticky-top top-0 start-0 vh-100 sidebar"
+      style="width: 280px"
+    >
+    <div class="d-flex flex-column gap-5">
+      <div>
+        <a
+        href="#"
+        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+      >
+       <div class="d-flex align-items-center gap-5    ">
+        <img src="../assets/image/Group 109.png" alt="" class="me-5" id="heart">
+      <button type="button" id="toggleBtn" class="toggle-btn">»</button>
+
+       </div>
+
+      </a>
+    </div>
+    
+      <div>
+        <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="./admindashboard.html" class="nav-link " aria-current="page">
+           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3333 10.6667V5.33333C17.3333 4.95556 17.4613 4.63911 17.7173 4.384C17.9733 4.12889 18.2898 4.00089 18.6667 4H26.6667C27.0444 4 27.3613 4.128 27.6173 4.384C27.8733 4.64 28.0009 4.95644 28 5.33333V10.6667C28 11.0444 27.872 11.3613 27.616 11.6173C27.36 11.8733 27.0436 12.0009 26.6667 12H18.6667C18.2889 12 17.9724 11.872 17.7173 11.616C17.4622 11.36 17.3342 11.0436 17.3333 10.6667ZM4 16V5.33333C4 4.95556 4.128 4.63911 4.384 4.384C4.64 4.12889 4.95644 4.00089 5.33333 4H13.3333C13.7111 4 14.028 4.128 14.284 4.384C14.54 4.64 14.6676 4.95644 14.6667 5.33333V16C14.6667 16.3778 14.5387 16.6947 14.2827 16.9507C14.0267 17.2067 13.7102 17.3342 13.3333 17.3333H5.33333C4.95556 17.3333 4.63911 17.2053 4.384 16.9493C4.12889 16.6933 4.00089 16.3769 4 16ZM17.3333 26.6667V16C17.3333 15.6222 17.4613 15.3058 17.7173 15.0507C17.9733 14.7956 18.2898 14.6676 18.6667 14.6667H26.6667C27.0444 14.6667 27.3613 14.7947 27.6173 15.0507C27.8733 15.3067 28.0009 15.6231 28 16V26.6667C28 27.0444 27.872 27.3613 27.616 27.6173C27.36 27.8733 27.0436 28.0009 26.6667 28H18.6667C18.2889 28 17.9724 27.872 17.7173 27.616C17.4622 27.36 17.3342 27.0436 17.3333 26.6667ZM4 26.6667V21.3333C4 20.9556 4.128 20.6391 4.384 20.384C4.64 20.1289 4.95644 20.0009 5.33333 20H13.3333C13.7111 20 14.028 20.128 14.284 20.384C14.54 20.64 14.6676 20.9564 14.6667 21.3333V26.6667C14.6667 27.0444 14.5387 27.3613 14.2827 27.6173C14.0267 27.8733 13.7102 28.0009 13.3333 28H5.33333C4.95556 28 4.63911 27.872 4.384 27.616C4.12889 27.36 4.00089 27.0436 4 26.6667ZM6.66667 14.6667H12V6.66667H6.66667V14.6667ZM20 25.3333H25.3333V17.3333H20V25.3333ZM20 9.33333H25.3333V6.66667H20V9.33333ZM6.66667 25.3333H12V22.6667H6.66667V25.3333Z" fill="black"/>
+</svg>
+<span class="text"> Dashboard </span>         </a>
+        </li>
+        <li>
+          <a href="../html-files/appoinment.html" class="nav-link link-body-emphasis">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.0003 13.3337C18.9458 13.3337 21.3337 10.9458 21.3337 8.00033C21.3337 5.05481 18.9458 2.66699 16.0003 2.66699C13.0548 2.66699 10.667 5.05481 10.667 8.00033C10.667 10.9458 13.0548 13.3337 16.0003 13.3337Z" stroke="#040404" stroke-width="1.8"/>
+<path d="M24.0003 26.6667C26.9458 26.6667 29.3337 24.2789 29.3337 21.3333C29.3337 18.3878 26.9458 16 24.0003 16C21.0548 16 18.667 18.3878 18.667 21.3333C18.667 24.2789 21.0548 26.6667 24.0003 26.6667Z" stroke="#040404" stroke-width="1.8"/>
+<path d="M22.2227 21.3338L23.3333 22.6671L25.7773 20.1484" stroke="#040404" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.0002 17.77C18.6871 17.4768 17.3455 17.3305 16.0002 17.334C10.1095 17.334 5.3335 20.0207 5.3335 23.334C5.3335 26.6474 5.3335 29.334 16.0002 29.334C23.5828 29.334 25.7748 27.9767 26.4095 26.0007" stroke="#040404" stroke-width="1.8"/>
+</svg><span class="text"> Appointments</span>
+          </a>
+        </li>
+        <li>
+          <a href="./doctor's.html" class="nav-link link-body-emphasis">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26.6668 29.334V25.334C26.6668 21.5633 26.6668 19.6767 25.4948 18.506C24.3242 17.334 22.4375 17.334 18.6668 17.334L16.0002 20.0007L13.3335 17.334C9.56283 17.334 7.67616 17.334 6.5055 18.506C5.3335 19.6767 5.3335 21.5633 5.3335 25.334V29.334M21.3335 17.334V24.6673" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.3337 17.3337V22.667M11.3337 22.667C12.0409 22.667 12.7192 22.9479 13.2193 23.448C13.7194 23.9481 14.0003 24.6264 14.0003 25.3337V26.667M11.3337 22.667C10.6264 22.667 9.94814 22.9479 9.44804 23.448C8.94794 23.9481 8.66699 24.6264 8.66699 25.3337V26.667M20.667 8.66699V7.33366C20.667 6.72082 20.5463 6.11399 20.3118 5.5478C20.0772 4.98162 19.7335 4.46717 19.3002 4.03383C18.8668 3.60049 18.3524 3.25674 17.7862 3.02222C17.22 2.7877 16.6132 2.66699 16.0003 2.66699C15.3875 2.66699 14.7807 2.7877 14.2145 3.02222C13.6483 3.25674 13.1338 3.60049 12.7005 4.03383C12.2672 4.46717 11.9234 4.98162 11.6889 5.5478C11.4544 6.11399 11.3337 6.72082 11.3337 7.33366V8.66699C11.3337 9.27983 11.4544 9.88666 11.6889 10.4528C11.9234 11.019 12.2672 11.5335 12.7005 11.9668C13.1338 12.4002 13.6483 12.7439 14.2145 12.9784C14.7807 13.213 15.3875 13.3337 16.0003 13.3337C16.6132 13.3337 17.22 13.213 17.7862 12.9784C18.3524 12.7439 18.8668 12.4002 19.3002 11.9668C19.7335 11.5335 20.0772 11.019 20.3118 10.4528C20.5463 9.88666 20.667 9.27983 20.667 8.66699Z" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.3335 25.667C22.3335 25.9322 22.2281 26.1866 22.0406 26.3741C21.8531 26.5616 21.5987 26.667 21.3335 26.667C21.0683 26.667 20.8139 26.5616 20.6264 26.3741C20.4389 26.1866 20.3335 25.9322 20.3335 25.667C20.3335 25.4018 20.4389 25.1474 20.6264 24.9599C20.8139 24.7723 21.0683 24.667 21.3335 24.667C21.5987 24.667 21.8531 24.7723 22.0406 24.9599C22.2281 25.1474 22.3335 25.4018 22.3335 25.667Z" stroke="black" stroke-width="1.8"/>
+</svg>
+<span class="text">Doctor’s</span>
+          </a>
+        </li>
+        <li>
+          <a href="./Patient.html" class="nav-link link-body-emphasis">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.7867 23.6533C19.948 24.216 17.7507 25.3627 19.0893 26.7973C19.7427 27.4987 20.472 28 21.3867 28H26.6133C27.528 28 28.2573 27.4987 28.9107 26.7973C30.2493 25.3627 28.052 24.216 27.2133 23.6547C26.2653 23.0109 25.1459 22.6668 24 22.6668C22.8541 22.6668 21.7346 23.0096 20.7867 23.6533ZM26.6667 16.6667C26.6667 17.3739 26.3857 18.0522 25.8856 18.5523C25.3855 19.0524 24.7072 19.3333 24 19.3333C23.2927 19.3333 22.6145 19.0524 22.1144 18.5523C21.6143 18.0522 21.3333 17.3739 21.3333 16.6667C21.3333 15.9594 21.6143 15.2811 22.1144 14.781C22.6145 14.281 23.2927 14 24 14C24.7072 14 25.3855 14.281 25.8856 14.781C26.3857 15.2811 26.6667 15.9594 26.6667 16.6667Z" stroke="black" stroke-width="1.8"/>
+<path d="M13.3332 8H19.9998M13.3332 4H23.9998M9.33317 12.6667V18.6667C9.33317 19.924 9.33317 20.552 8.9425 20.9427C8.55184 21.3333 7.92384 21.3333 6.6665 21.3333H5.33317C4.07584 21.3333 3.44784 21.3333 3.05717 20.9427C2.6665 20.552 2.6665 19.924 2.6665 18.6667V15.3333C2.6665 14.076 2.6665 13.448 3.05717 13.0573C3.44784 12.6667 4.07584 12.6667 5.33317 12.6667H9.33317ZM9.33317 12.6667H15.9998" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.66634 6.66667C8.66634 7.37391 8.38539 8.05219 7.88529 8.55229C7.3852 9.05238 6.70692 9.33333 5.99967 9.33333C5.29243 9.33333 4.61415 9.05238 4.11406 8.55229C3.61396 8.05219 3.33301 7.37391 3.33301 6.66667C3.33301 5.95942 3.61396 5.28115 4.11406 4.78105C4.61415 4.28095 5.29243 4 5.99967 4C6.70692 4 7.3852 4.28095 7.88529 4.78105C8.38539 5.28115 8.66634 5.95942 8.66634 6.66667Z" stroke="black" stroke-width="1.8" fill="black"/>
+</svg>
+<span class="text">Patient</span>
+          </a>
+        </li>
+        <li>
+          <a href="./Prescription.html" class="nav-link link-body-emphasis">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.2536 2.75293H8.74691C7.86361 2.75539 7.01719 3.10737 6.39261 3.73196C5.76802 4.35655 5.41604 5.20297 5.41357 6.08626V25.9129C5.41604 26.7962 5.76802 27.6426 6.39261 28.2672C7.01719 28.8918 7.86361 29.2438 8.74691 29.2463H23.2536C24.1376 29.2463 24.9855 28.8951 25.6106 28.27C26.2357 27.6448 26.5869 26.797 26.5869 25.9129V6.08626C26.5869 5.20221 26.2357 4.35436 25.6106 3.72924C24.9855 3.10412 24.1376 2.75293 23.2536 2.75293ZM25.2536 25.9129C25.2536 26.4434 25.0429 26.9521 24.6678 27.3271C24.2927 27.7022 23.784 27.9129 23.2536 27.9129H8.74691C8.21647 27.9129 7.70777 27.7022 7.33269 27.3271C6.95762 26.9521 6.74691 26.4434 6.74691 25.9129V8.67293H25.2536V25.9129Z" fill="#040404"/>
+<path d="M10.0651 12.6751C9.88829 12.6751 9.71872 12.6049 9.5937 12.4799C9.46868 12.3548 9.39844 12.1853 9.39844 12.0085C9.39844 11.8317 9.46868 11.6621 9.5937 11.5371C9.71872 11.412 9.88829 11.3418 10.0651 11.3418H21.9438C22.1206 11.3418 22.2902 11.412 22.4152 11.5371C22.5402 11.6621 22.6104 11.8317 22.6104 12.0085C22.6104 12.1853 22.5402 12.3548 22.4152 12.4799C22.2902 12.6049 22.1206 12.6751 21.9438 12.6751H10.0651ZM10.0651 16.6751C9.88829 16.6751 9.71872 16.6049 9.5937 16.4799C9.46868 16.3548 9.39844 16.1853 9.39844 16.0085C9.39844 15.8317 9.46868 15.6621 9.5937 15.5371C9.71872 15.412 9.88829 15.3418 10.0651 15.3418H18.7318C18.9086 15.3418 19.0782 15.412 19.2032 15.5371C19.3282 15.6621 19.3984 15.8317 19.3984 16.0085C19.3984 16.1853 19.3282 16.3548 19.2032 16.4799C19.0782 16.6049 18.9086 16.6751 18.7318 16.6751H10.0651ZM10.0878 24.4991C9.91096 24.4991 9.74139 24.4289 9.61637 24.3039C9.49134 24.1788 9.4211 24.0093 9.4211 23.8325C9.4211 23.6557 9.49134 23.4861 9.61637 23.3611C9.74139 23.236 9.91096 23.1658 10.0878 23.1658H14.4224C14.5992 23.1658 14.7688 23.236 14.8938 23.3611C15.0189 23.4861 15.0891 23.6557 15.0891 23.8325C15.0891 24.0093 15.0189 24.1788 14.8938 24.3039C14.7688 24.4289 14.5992 24.4991 14.4224 24.4991H10.0878Z" fill="black"/>
+</svg>
+<span class="text">Prescription</span>
+          </a>
+        </li>
+        <li>
+          <a href="./invoicelist.html" class="nav-link link-body-emphasis">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 3V29H26V9.6L25.7 9.3L19.7 3.3L19.4 3H6ZM8 5H18V11H24V27H8V5ZM20 6.4L22.6 9H20V6.4ZM10 13V15H22V13H10ZM10 18V20H17V18H10ZM19 18V20H22V18H19ZM10 22V24H17V22H10ZM19 22V24H22V22H19Z" fill="black"/>
+</svg>
+<span class="text">Invoice</span>
+          </a>
+        </li>
+        <li>
+          <a href="./revenuereport.html" class="nav-link link-body-emphasis">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.66699 23.333V19.333M15.3337 23.333V11.333M22.0003 23.333V17.9997" stroke="black" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M28.667 7.33301C28.667 8.39387 28.2456 9.41129 27.4954 10.1614C26.7453 10.9116 25.7279 11.333 24.667 11.333C23.6061 11.333 22.5887 10.9116 21.8386 10.1614C21.0884 9.41129 20.667 8.39387 20.667 7.33301C20.667 6.27214 21.0884 5.25473 21.8386 4.50458C22.5887 3.75444 23.6061 3.33301 24.667 3.33301C25.7279 3.33301 26.7453 3.75444 27.4954 4.50458C28.2456 5.25473 28.667 6.27214 28.667 7.33301Z" stroke="black" stroke-width="1.8"/>
+<path d="M28.6615 14.6663C28.6615 14.6663 28.6668 15.1197 28.6668 15.9997C28.6668 21.9703 28.6668 24.957 26.8122 26.8117C24.9575 28.6663 21.9722 28.6663 16.0002 28.6663C10.0295 28.6663 7.04283 28.6663 5.18816 26.8117C3.3335 24.957 3.3335 21.9717 3.3335 15.9997C3.3335 10.029 3.3335 7.04367 5.18816 5.18767C7.04283 3.33301 10.0282 3.33301 16.0002 3.33301H17.3335" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<span class="text">Reports</span>
+          </a>
+        </li>
+        <li>
+          <a href="./sytemsetting.html" class="nav-link link-body-emphasis">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M30 24V22H27.899C27.7693 21.3743 27.5208 20.7792 27.167 20.247L28.657 18.757L27.243 17.343L25.753 18.833C25.2208 18.4792 24.6257 18.2307 24 18.101V16H22V18.101C21.3743 18.2307 20.7792 18.4792 20.247 18.833L18.757 17.343L17.343 18.757L18.833 20.247C18.4792 20.7792 18.2307 21.3743 18.101 22H16V24H18.101C18.2307 24.6257 18.4792 25.2208 18.833 25.753L17.343 27.243L18.757 28.657L20.247 27.167C20.7792 27.5208 21.3743 27.7693 22 27.899V30H24V27.899C24.6257 27.7693 25.2208 27.5208 25.753 27.167L27.243 28.657L28.657 27.243L27.167 25.753C27.5208 25.2208 27.7693 24.6257 27.899 24H30ZM23 26C22.4067 26 21.8266 25.8241 21.3333 25.4944C20.8399 25.1648 20.4554 24.6962 20.2284 24.1481C20.0013 23.5999 19.9419 22.9967 20.0576 22.4147C20.1734 21.8328 20.4591 21.2982 20.8787 20.8787C21.2982 20.4591 21.8328 20.1734 22.4147 20.0576C22.9967 19.9419 23.5999 20.0013 24.1481 20.2284C24.6962 20.4554 25.1648 20.8399 25.4944 21.3333C25.8241 21.8266 26 22.4067 26 23C25.9992 23.7954 25.6829 24.558 25.1204 25.1204C24.558 25.6829 23.7954 25.9992 23 26Z" fill="black"/>
+<path d="M28 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V26C2 26.5304 2.21071 27.0391 2.58579 27.4142C2.96086 27.7893 3.46957 28 4 28H14V26H4V12H28V15H30V6C30 5.46957 29.7893 4.96086 29.4142 4.58579C29.0391 4.21071 28.5304 4 28 4ZM28 10H4V6H28V10Z" fill="black"/>
+<path d="M20 9C20.5523 9 21 8.55228 21 8C21 7.44772 20.5523 7 20 7C19.4477 7 19 7.44772 19 8C19 8.55228 19.4477 9 20 9Z" fill="black"/>
+<path d="M23 9C23.5523 9 24 8.55228 24 8C24 7.44772 23.5523 7 23 7C22.4477 7 22 7.44772 22 8C22 8.55228 22.4477 9 23 9Z" fill="black"/>
+<path d="M26 9C26.5523 9 27 8.55228 27 8C27 7.44772 26.5523 7 26 7C25.4477 7 25 7.44772 25 8C25 8.55228 25.4477 9 26 9Z" fill="black"/>
+</svg>
+<span class="text">System</span>
+          </a>
+        </li>
+      </ul>
+      <div class="sidebar-footer ">
+        <ul>
+        <li>
+          <a href="./sytemsetting.html" >
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.7722 2C18.9839 2.00001 19.1902 2.06721 19.3613 2.19193C19.5323 2.31664 19.6594 2.49244 19.7242 2.694L20.8242 6.112C21.2862 6.338 21.7282 6.592 22.1502 6.878L25.6622 6.122C25.8693 6.07779 26.085 6.10045 26.2784 6.18671C26.4718 6.27297 26.6328 6.41838 26.7382 6.602L29.5102 11.4C29.6161 11.5835 29.6609 11.7959 29.6383 12.0065C29.6156 12.2172 29.5267 12.4152 29.3842 12.572L26.9742 15.232C27.0093 15.7421 27.0093 16.2539 26.9742 16.764L29.3842 19.428C29.5267 19.5848 29.6156 19.7828 29.6383 19.9935C29.6609 20.2041 29.6161 20.4165 29.5102 20.6L26.7382 25.4C26.6325 25.5833 26.4714 25.7283 26.278 25.8141C26.0847 25.9 25.8691 25.9224 25.6622 25.878L22.1502 25.122C21.7302 25.406 21.2862 25.662 20.8262 25.888L19.7242 29.306C19.6594 29.5076 19.5323 29.6834 19.3613 29.8081C19.1902 29.9328 18.9839 30 18.7722 30H13.2282C13.0165 30 12.8103 29.9328 12.6392 29.8081C12.4681 29.6834 12.341 29.5076 12.2762 29.306L11.1782 25.89C10.7175 25.6647 10.2731 25.4074 9.84822 25.12L6.33822 25.878C6.13115 25.9222 5.91539 25.8996 5.72202 25.8133C5.52865 25.727 5.36765 25.5816 5.26222 25.398L2.49022 20.6C2.38437 20.4165 2.33953 20.2041 2.36218 19.9935C2.38482 19.7828 2.47378 19.5848 2.61622 19.428L5.02622 16.764C4.9913 16.2553 4.9913 15.7447 5.02622 15.236L2.61622 12.572C2.47378 12.4152 2.38482 12.2172 2.36218 12.0065C2.33953 11.7959 2.38437 11.5835 2.49022 11.4L5.26222 6.6C5.36794 6.41675 5.52907 6.27175 5.72241 6.18586C5.91576 6.09997 6.13136 6.07761 6.33822 6.122L9.84822 6.88C10.2722 6.594 10.7162 6.336 11.1782 6.11L12.2782 2.694C12.3428 2.49309 12.4693 2.31776 12.6396 2.1931C12.8098 2.06844 13.0152 2.00085 13.2262 2H18.7702H18.7722ZM18.0402 4H13.9602L12.8242 7.534L12.0582 7.908C11.6816 8.09226 11.3181 8.30209 10.9702 8.536L10.2622 9.016L6.63022 8.232L4.59022 11.768L7.08022 14.524L7.02022 15.372C6.99147 15.7902 6.99147 16.2098 7.02022 16.628L7.08022 17.476L4.58622 20.232L6.62822 23.768L10.2602 22.986L10.9682 23.464C11.3161 23.6979 11.6796 23.9077 12.0562 24.092L12.8222 24.466L13.9602 28H18.0442L19.1842 24.464L19.9482 24.092C20.3244 23.9082 20.6873 23.6983 21.0342 23.464L21.7402 22.986L25.3742 23.768L27.4142 20.232L24.9222 17.476L24.9822 16.628C25.0111 16.2092 25.0111 15.7888 24.9822 15.37L24.9222 14.522L27.4162 11.768L25.3742 8.232L21.7402 9.012L21.0342 8.536C20.6873 8.30166 20.3244 8.09182 19.9482 7.908L19.1842 7.536L18.0422 4H18.0402ZM16.0002 10C17.5915 10 19.1176 10.6321 20.2429 11.7574C21.3681 12.8826 22.0002 14.4087 22.0002 16C22.0002 17.5913 21.3681 19.1174 20.2429 20.2426C19.1176 21.3679 17.5915 22 16.0002 22C14.4089 22 12.8828 21.3679 11.7576 20.2426C10.6324 19.1174 10.0002 17.5913 10.0002 16C10.0002 14.4087 10.6324 12.8826 11.7576 11.7574C12.8828 10.6321 14.4089 10 16.0002 10ZM16.0002 12C14.9394 12 13.9219 12.4214 13.1718 13.1716C12.4216 13.9217 12.0002 14.9391 12.0002 16C12.0002 17.0609 12.4216 18.0783 13.1718 18.8284C13.9219 19.5786 14.9394 20 16.0002 20C17.0611 20 18.0785 19.5786 18.8286 18.8284C19.5788 18.0783 20.0002 17.0609 20.0002 16C20.0002 14.9391 19.5788 13.9217 18.8286 13.1716C18.0785 12.4214 17.0611 12 16.0002 12Z" fill="#040404"/>
+</svg>
+  <span class="text">Setting</span>
+          </a>
+        </li>
+        <li>
+          <a href="../html-files/index.html"
+   class="logout-btn d-flex align-items-center gap-2 px-5 py-2 rounded-3 text-decoration-none mt-4">
+  
+  <!-- ICON (SVG) -->
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.6667 10.6667L20.7867 12.5467L22.8933 14.6667H12V17.3333H22.8933L20.7867 19.44L22.6667 21.3333L28 16L22.6667 10.6667ZM6.66667 6.66667H16V4H6.66667C5.2 4 4 5.2 4 6.66667V25.3333C4 26.8 5.2 28 6.66667 28H16V25.3333H6.66667V6.66667Z" fill="white"/>
+</svg>
+
+
+  <!-- TEXT -->
+  <span class="logout-text">Logout</span>
+</a>
+
+        </li>
+      </ul>
+      </div>
+      </div>
+    </div>
+
+
+      
+    </div>
+
+      <div class="main-content">
+        <div
+          class="admin-header py-2 w-100 navbar navbar-expand-lg bg-light sticky-top"
+        >
+       
+          <div class="logo ms-2 d-flex gap-2">
+             <button class="btn switch" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+☰
+</button>
+            <img src="../assets/image/Group 112.png" alt="" />
+          </div>
+          <div class="admin-item d-flex pe-4">
+            <div class="icon-img mobile-hide">
+              <a href="../html-files/admin-calender.html">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M23.6667 4C26.0599 4 28 5.94009 28 8.33333V23.6667C28 26.0599 26.0599 28 23.6667 28H8.33333C5.94009 28 4 26.0599 4 23.6667V8.33333C4 5.94009 5.94009 4 8.33333 4H23.6667ZM26 11.3333H6V23.6667C6 24.9553 7.04467 26 8.33333 26H23.6667C24.9553 26 26 24.9553 26 23.6667V11.3333ZM10.3333 19.3333C11.2538 19.3333 12 20.0795 12 21C12 21.9205 11.2538 22.6667 10.3333 22.6667C9.41285 22.6667 8.66667 21.9205 8.66667 21C8.66667 20.0795 9.41285 19.3333 10.3333 19.3333ZM16 19.3333C16.9205 19.3333 17.6667 20.0795 17.6667 21C17.6667 21.9205 16.9205 22.6667 16 22.6667C15.0795 22.6667 14.3333 21.9205 14.3333 21C14.3333 20.0795 15.0795 19.3333 16 19.3333ZM10.3333 14C11.2538 14 12 14.7461 12 15.6667C12 16.5872 11.2538 17.3333 10.3333 17.3333C9.41285 17.3333 8.66667 16.5872 8.66667 15.6667C8.66667 14.7461 9.41285 14 10.3333 14ZM16 14C16.9205 14 17.6667 14.7461 17.6667 15.6667C17.6667 16.5872 16.9205 17.3333 16 17.3333C15.0795 17.3333 14.3333 16.5872 14.3333 15.6667C14.3333 14.7461 15.0795 14 16 14ZM21.6667 14C22.5872 14 23.3333 14.7461 23.3333 15.6667C23.3333 16.5872 22.5872 17.3333 21.6667 17.3333C20.7461 17.3333 20 16.5872 20 15.6667C20 14.7461 20.7461 14 21.6667 14ZM23.6667 6H8.33333C7.04467 6 6 7.04467 6 8.33333V9.33333H26V8.33333C26 7.04467 24.9553 6 23.6667 6Z"
+                    fill="black"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div class="icon-img mobile-hide">
+              <a href="">
+                <svg
+                  width="29"
+                  height="29"
+                  viewBox="0 0 29 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.1136 15.9404C8.00964 11.8404 7.18831 5.82439 9.37631 0.900391C7.73631 1.44706 6.36831 2.54039 5.00164 3.90839C3.70194 5.19748 2.67034 6.73115 1.96634 8.42093C1.26235 10.1107 0.899902 11.9232 0.899902 13.7537C0.899902 15.5843 1.26235 17.3967 1.96634 19.0865C2.67034 20.7763 3.70194 22.31 5.00164 23.5991C10.471 29.0684 18.9483 28.7951 24.4176 23.3257C25.7856 21.9577 26.879 20.5911 27.4256 18.9497C22.231 20.8644 16.2136 20.0431 12.111 15.9417"
+                    stroke="black"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div class="icon-img ">
+              <a href="">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M19.2731 3.299C18.0166 2.79419 16.6603 2.58682 15.3103 2.69311C13.9604 2.79939 12.6533 3.21644 11.4912 3.91166C10.3291 4.60689 9.34361 5.56144 8.61164 6.70071C7.87968 7.83999 7.42111 9.13311 7.27178 10.479L6.93578 13.5003L6.92778 13.5723C6.77737 14.8834 6.35065 16.1476 5.67578 17.2817L5.63844 17.3443L4.86778 18.6283L4.83578 18.6817C4.51311 19.219 4.22244 19.7057 4.02778 20.1177C3.83044 20.5363 3.61844 21.1043 3.72111 21.7497C3.82126 22.3863 4.14855 22.965 4.64244 23.379C5.14378 23.7977 5.73844 23.9083 6.19978 23.955C6.65311 24.0003 7.22111 24.0003 7.84644 24.0003H24.1531C24.7784 24.0003 25.3451 24.0003 25.7998 23.955C26.2598 23.9083 26.8558 23.7977 27.3558 23.379C27.8502 22.9653 28.1779 22.3864 28.2784 21.7497C28.3811 21.1057 28.1691 20.5363 27.9718 20.1177C27.7771 19.7043 27.4864 19.219 27.1638 18.6817L27.1318 18.6283L26.3611 17.3443L26.3238 17.2817C25.8198 16.435 25.453 15.5138 25.2371 14.5523C24.3343 14.7226 23.4059 14.7045 22.5104 14.499C22.7566 15.9634 23.2725 17.3695 24.0318 18.6457L24.0744 18.7163L24.8451 20.0003C25.2091 20.6083 25.4291 20.9777 25.5598 21.2537L25.5784 21.2963L25.5318 21.3017C25.2291 21.3323 24.7984 21.3337 24.0904 21.3337H7.90911C7.20111 21.3337 6.77044 21.3323 6.46644 21.3017L6.42111 21.2963L6.43978 21.2537C6.57044 20.9777 6.79044 20.6083 7.15444 20.0003L7.92511 18.7163L7.96778 18.6457C8.83536 17.1875 9.38387 15.562 9.57711 13.8763L9.58644 13.7963L9.92244 10.7737C10.0214 9.88088 10.3159 9.02088 10.7849 8.2548C11.2539 7.48872 11.886 6.83538 12.6361 6.34124C13.3862 5.84711 14.236 5.5243 15.125 5.39578C16.014 5.26727 16.9204 5.33619 17.7798 5.59766C18.113 4.73627 18.6215 3.95351 19.2731 3.299ZM22.6424 5.70433C22.1602 5.98939 21.7799 6.4191 21.5557 6.93247C21.3314 7.44585 21.2745 8.01681 21.3931 8.56433C21.5531 8.86478 21.6887 9.179 21.7998 9.507C22.1162 9.96953 22.5703 10.3206 23.0975 10.5104C23.6248 10.7002 24.1985 10.7191 24.7371 10.5643L24.7278 10.479C24.5338 8.71256 23.8064 7.04709 22.6424 5.70433Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M12.1357 23.5537C12.3637 24.8297 12.8664 25.9564 13.5651 26.7604C14.2637 27.5644 15.1197 28.0004 15.9997 28.0004C16.8797 28.0004 17.7357 27.5644 18.4344 26.7604C19.1331 25.9564 19.6344 24.8297 19.8637 23.5537"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M23.9998 11.3337C25.8408 11.3337 27.3332 9.84127 27.3332 8.00033C27.3332 6.15938 25.8408 4.66699 23.9998 4.66699C22.1589 4.66699 20.6665 6.15938 20.6665 8.00033C20.6665 9.84127 22.1589 11.3337 23.9998 11.3337Z"
+                    fill="#F72929"
+                    stroke="#F72929"
+                    stroke-width="2"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div class="icon-img ">
+              <img src="../assets/image/Group 7.png" alt="" />
+            </div>
+            <div class="dropdown mobile-show">
+              <button class="btn p-0 border-0 bg-transparent"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false">
+                <i class="fa-solid fa-ellipsis-vertical find">
+
+            </i>
+              </button>
+               <ul class="dropdown-menu dropdown-menu-end">
+      <li>
+        <a class="dropdown-item" href="#">
+          <i class="fa-regular fa-calendar me-2"></i> Calendar
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="#">
+          <i class="fa-regular fa-moon me-2"></i> Theme
+        </a>
+      </li>
+    </ul>
+  </div>
+            </div>
+          </div>
+        <div class="container-fluid header"></div>
+        <div class="p-5 pt-4 pe-4">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+            <div class="d-flex justify-content-between">
+              <div class="col d-flex flex-wrap gap-2">
+                <h4>Invoice</h4>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <div>
+                <div class="dropdown">
+                  <button
+                    class="btn dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    style="font-weight: 500"
+                  >
+                    Export
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div>
+                <button type="button" class="btn appoinment-btn"
+                  data-bs-toggle="modal" data-bs-target="#addPatientModal">
+                    <a href="./invoiceadd.html" style="text-decoration: none;color: #ffff;">+ New Invoice</a>
+                  </button>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mt-3">
+            <div class="search-box">
+              <input type="text" placeholder="Search Doctor" />
+              <i class="fa fa-search" style="color: #08CB00;"></i>
+            </div>
+            <div class="dropdown">
+              <button
+                class="btn dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Sort By: Recent
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table
+              class="table"
+              style="border-radius: 4px; border: 1px solid #d1d1d6"
+            >
+              <thead>
+                <tr>
+                    <th scope="col">Invoice ID</th>
+                  <th scope="col">Patient’s</th>
+                   <th scope="col">Create Date</th>
+                   <th scope="col">Due Date</th>
+                  <th scope="col">Status</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="appoinment">
+                <tr>
+                 <td><div class="invoice-id py-3">#INV0036</div></td>
+                  <td scope="row">
+                    <div class="d-flex align-items-center gap-2 pt-2">
+                      <div class="">
+                        <img
+                          src="../assets/image/appoinment-img/753bf16d15c8d37c6c80fda409f646c0272d3a86.png"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <strong>Sahil Shah</strong><br />
+                        <span>+91 9854253220</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="date-time py-3">22/04/2025</div>
+                  </td>
+                  <td><div class="py-3 mode">22/04/2025</div></td>
+                  <td>
+                    <div class="my-3 status-btn in d-flex align-items-center gap-1"><div class="dot in" ></div>Paid</div>
+                  </td>
+                  <td>
+                    <div class="p-3">
+                      <i class="fa-solid fa-ellipsis-vertical edit"></i>
+                    </div>
+                  </td>
+                </tr>
+               <tr>
+                 <td><div class="invoice-id py-3">#INV0036</div></td>
+                  <td scope="row">
+                    <div class="d-flex align-items-center gap-2 pt-2">
+                      <div class="">
+                        <img
+                          src="../assets/image/appoinment-img/ptient1.png"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <strong>Jenny Woll</strong><br />
+                        <span>+91 9854253220</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="date-time py-3">22/04/2025</div>
+                  </td>
+                  <td><div class="py-3 mode">22/04/2025</div></td>
+                  <td>
+                    <div class="my-3 status-btn in d-flex align-items-center gap-1"><div class="dot in" ></div>Paid</div>
+                  </td>
+                  <td>
+                    <div class="p-3">
+                      <i class="fa-solid fa-ellipsis-vertical edit"></i>
+                    </div>
+                  </td>
+                </tr>
+               <tr>
+                 <td><div class="invoice-id py-3">#INV0038</div></td>
+                  <td scope="row">
+                    <div class="d-flex align-items-center gap-2 pt-2">
+                      <div class="">
+                        <img
+                          src="../assets/image/appoinment-img/patient2.png"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <strong>Sushma Patan</strong><br />
+                        <span>+91 9854253220</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="date-time py-3">22/04/2025</div>
+                  </td>
+                  <td><div class="py-3 mode">22/04/2025</div></td>
+                  <td>
+                    <div class="my-3 status-btn cancel d-flex align-items-center gap-1"><div class="dot unpaid " ></div>UnPaid</div>
+                  </td>
+                  <td>
+                    <div class="p-3">
+                      <i class="fa-solid fa-ellipsis-vertical edit"></i>
+                    </div>
+                  </td>
+                </tr>
+               <tr>
+                 <td><div class="invoice-id py-3">#INV0038</div></td>
+                  <td scope="row">
+                    <div class="d-flex align-items-center gap-2 pt-2">
+                      <div class="">
+                        <img
+                          src="../assets/image/appoinment-img/patient3.png"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <strong>
+Yash Mehta</strong><br />
+                        <span>+91 9854253220</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="date-time py-3">22/04/2025</div>
+                  </td>
+                  <td><div class="py-3 mode">22/04/2025</div></td>
+                  <td>
+                    <div class="my-3 status-btn schedule d-flex align-items-center gap-1"><div class="dot partial " ></div>UnPaid</div>
+                  </td>
+                  <td>
+                    <div class="p-3">
+                      <i class="fa-solid fa-ellipsis-vertical edit"></i>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                 <td><div class="invoice-id py-3">#INV0040</div></td>
+                  <td scope="row">
+                    <div class="d-flex align-items-center gap-2 pt-2">
+                      <div class="">
+                        <img
+                          src="../assets/image/appoinment-img/patient4.png"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <strong>
+Kajal Shah</strong><br />
+                        <span>+91 9854253220</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="date-time py-3">22/04/2025</div>
+                  </td>
+                  <td><div class="py-3 mode">22/04/2025</div></td>
+                  <td>
+                    <div class="my-3 status-btn in d-flex align-items-center gap-1"><div class="dot in " ></div>Paid</div>
+                  </td>
+                  <td>
+                    <div class="p-3">
+                      <i class="fa-solid fa-ellipsis-vertical edit"></i>
+                    </div>
+                  </td>
+                </tr>
+               <tr>
+                 <td><div class="invoice-id py-3">#INV0041</div></td>
+                  <td scope="row">
+                    <div class="d-flex align-items-center gap-2 pt-2">
+                      <div class="">
+                        <img
+                          src="../assets/image/appoinment-img/patient5.png"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <strong>
+Priya Gohil</strong><br />
+                        <span>+91 9854253220</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="date-time py-3">22/04/2025</div>
+                  </td>
+                  <td><div class="py-3 mode">22/04/2025</div></td>
+                  <td>
+                    <div class="my-3 status-btn cancel d-flex align-items-center gap-1"><div class="dot unpaid " ></div>UnPaid</div>
+                  </td>
+                  <td>
+                    <div class="p-3">
+                      <i class="fa-solid fa-ellipsis-vertical edit"></i>
+                    </div>
+                  </td>
+                </tr>
+               <tr>
+                 <td><div class="invoice-id py-3">#INV0042</div></td>
+                  <td scope="row">
+                    <div class="d-flex align-items-center gap-2 pt-2">
+                      <div class="">
+                        <img
+                          src="../assets/image/appoinment-img/patient6.png"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <strong>
+Amit Suthar</strong><br />
+                        <span>+91 9854253220</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="date-time py-3">22/04/2025</div>
+                  </td>
+                  <td><div class="py-3 mode">22/04/2025</div></td>
+                  <td>
+                    <div class="my-3 status-btn schedule d-flex align-items-center gap-1"><div class="dot partial " ></div>Partially Paid</div>
+                  </td>
+                  <td>
+                    <div class="p-3">
+                      <i class="fa-solid fa-ellipsis-vertical edit"></i>
+                    </div>
+                  </td>
+                </tr>
+                 <tr>
+                 <td><div class="invoice-id py-3">#INV0043</div></td>
+                  <td scope="row">
+                    <div class="d-flex align-items-center gap-2 pt-2">
+                      <div class="">
+                        <img
+                          src="../assets/image/appoinment-img/1ba326179e25ce4d585342fdf2b11db6a2f62f8c.png"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <strong>
+Alex Parter</strong><br />
+                        <span>+91 9854253220</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="date-time py-3">22/04/2025</div>
+                  </td>
+                  <td><div class="py-3 mode">22/04/2025</div></td>
+                  <td>
+                    <div class="my-3 status-btn in d-flex align-items-center gap-1"><div class="dot in " ></div> Paid</div>
+                  </td>
+                  <td>
+                    <div class="p-3">
+                      <i class="fa-solid fa-ellipsis-vertical edit"></i>
+                    </div>
+                  </td>
+                </tr>
+                  <tr>
+                 <td><div class="invoice-id py-3">#INV0044</div></td>
+                  <td scope="row">
+                    <div class="d-flex align-items-center gap-2 pt-2">
+                      <div class="">
+                        <img
+                          src="../assets/image/appoinment-img/patient8.png"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <strong>
+Sanket Tiwari</strong><br />
+                        <span>+91 9854253220</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="date-time py-3">22/04/2025</div>
+                  </td>
+                  <td><div class="py-3 mode">22/04/2025</div></td>
+                  <td>
+                    <div class="my-3 status-btn in d-flex align-items-center gap-1"><div class="dot in " ></div> Paid</div>
+                  </td>
+                  <td>
+                    <div class="p-3">
+                      <i class="fa-solid fa-ellipsis-vertical edit"></i>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                 <td><div class="invoice-id py-3">#INV0045</div></td>
+                  <td scope="row">
+                    <div class="d-flex align-items-center gap-2 pt-2">
+                      <div class="">
+                        <img
+                          src="../assets/image/appoinment-img/patient9.png"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <strong>
+Ravikumar Sing</strong><br />
+                        <span>+91 9854253220</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="date-time py-3">22/04/2025</div>
+                  </td>
+                  <td><div class="py-3 mode">22/04/2025</div></td>
+                  <td>
+                    <div class="my-3 status-btn schedule d-flex align-items-center gap-1"><div class="dot partial " ></div>Partially Paid</div>
+                  </td>
+                  <td>
+                    <div class="p-3">
+                      <i class="fa-solid fa-ellipsis-vertical edit"></i>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="property-card" id="propertyCard">
+              <div><a href="../html-files/invoiceview.html">View</a></div>
+             
+              <div>
+                <a
+                  href="#"
+                  id="delete-btn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalChoice"
+                >
+                  Delete
+                </a>
+              </div>
+            </div>
+            <div
+              class="modal p-4 py-md-5"
+              tabindex="-1"
+              role="dialog"
+              id="modalChoice"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-3 shadow">
+                  <div
+                    class="modal-body p-4 d-flex flex-column align-items-center justify-content-between"
+                  >
+                    <div class="delete-icon">
+                      <img
+                        src="../assets/image/appoinment-img/wpf_delete.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="text-center confirmation">
+                      <h6>Delete Confirmation</h6>
+                      <span>Are you sure want to delete?</span>
+                    </div>
+                    <div
+                      class="d-flex text-center delete-btn-container align-items-center"
+                    >
+                      <button
+                        type="button"
+                        class="btn btn-lg btn-link fs-6 text-decoration-none py-3 m-0 rounded-0 btn-first"
+                         data-bs-dismiss="modal"
+                        fdprocessedid="ixa2yb"
+                      >
+                        <span>Cancel</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-lg btn-link fs-6 text-decoration-none btn-second"
+                        fdprocessedid="2g6ykb"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- edit patient modal -->
+            <div class="modal fade" id="editPatientModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title fw-semibold">Edit Patient</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+
+        <!-- content start -->
+        <div class="container edit-patient-main">
+
+          <div class="col">
+            <h4 style="
+              font-weight: 600;
+              font-size: 22px;
+              margin-top: 25px;
+              margin-bottom: 25px;
+            ">
+              Patient Information
+            </h4>
+          </div>
+
+          <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center gap-2 edit-profile">
+              <div class="edit-patient-img">
+                <img src="../assets/image/appoinment-img/patient5.png" alt="">
+              </div>
+              <strong>Profile Image</strong>
+              <span>Add Profile Image</span>
+            </div>
+
+            <div class="row g-4 mt-1">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">First Name<span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Last Name<span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-4 mt-1">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Contact Number.<span>*</span></label>
+                <div class="input-icon position-relative">
+                  <input type="text" class="form-control ps-5">
+                  <div class="flag-img position-absolute top-50 start-0 translate-middle-y ps-2 d-flex align-items-center gap-1">
+                    <img src="../assets/image/openmoji_flag-india.png" alt="" width="20">
+                    <span>+91</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Email Address<span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-4 mt-1">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Gender<span>*</span></label>
+                <div class="input-icon">
+                  <select class="form-select">
+                    <option selected>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Date <span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control" placeholder="DD/MM/YYYY" />
+                  <i class="fa-regular fa-calendar-days"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="addr-info-patient mt-3 fw-semibold">Address Information</div>
+            </div>
+
+            <div class="row g-4 mt-1">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Address 1<span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Address 2<span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-4 mt-1">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Pin Code<span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">State<span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+       
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-create">Save Details</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+  <!-- add patient modal -->
+   <div class="modal fade" id="addPatientModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title fw-semibold">Add Patient</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+
+        <!-- content start -->
+        <div class="container edit-patient-main">
+
+          <div class="col">
+            <h4 style="
+              font-weight: 600;
+              font-size: 22px;
+              margin-top: 25px;
+              margin-bottom: 25px;
+            ">
+              Patient Information
+            </h4>
+          </div>
+
+          <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center gap-2 edit-profile">
+              <div class="edit-patient-img">
+                <img src="../assets/image/appoinment-img/patient5.png" alt="">
+              </div>
+              <strong>Profile Image</strong>
+              <span>Add Profile Image</span>
+            </div>
+
+            <div class="row g-4 mt-1">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">First Name<span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Last Name<span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-4 mt-1">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Contact Number.<span>*</span></label>
+                <div class="input-icon position-relative">
+                  <input type="text" class="form-control ps-5">
+                  <div class="flag-img position-absolute top-50 start-0 translate-middle-y ps-2 d-flex align-items-center gap-1">
+                    <img src="../assets/image/openmoji_flag-india.png" alt="" width="20">
+                    <span>+91</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Email Address<span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-4 mt-1">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Gender<span>*</span></label>
+                <div class="input-icon">
+                  <select class="form-select">
+                    <option selected>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Date <span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control" placeholder="DD/MM/YYYY" />
+                  <i class="fa-regular fa-calendar-days"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="addr-info-patient mt-3 fw-semibold">Address Information</div>
+            </div>
+
+            <div class="row g-4 mt-1">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Address 1<span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Address 2<span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-4 mt-1">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Pin Code<span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">State<span>*</span></label>
+                <div class="input-icon">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+       
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-create">Add Patient</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+          </div>
+            <div class="load-btn"> 
+            <button><a href="./doctorlist.html">Load More <i class="fa-solid fa-circle-notch"></i></a></button>
+           </div>
+        </div>
+      </div>
+       <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title"> <img src="../assets/image/Group 112.png" alt="" /></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+     <div
+      class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary sticky-top top-0 start-0 vh-100 sidebar-small"
+      style="width: 280px"
+    >
+    <div class="d-flex flex-column gap-5">
+    
+      <div>
+        <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="./admindashboard.html" class="nav-link " aria-current="page">
+         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3333 10.6667V5.33333C17.3333 4.95556 17.4613 4.63911 17.7173 4.384C17.9733 4.12889 18.2898 4.00089 18.6667 4H26.6667C27.0444 4 27.3613 4.128 27.6173 4.384C27.8733 4.64 28.0009 4.95644 28 5.33333V10.6667C28 11.0444 27.872 11.3613 27.616 11.6173C27.36 11.8733 27.0436 12.0009 26.6667 12H18.6667C18.2889 12 17.9724 11.872 17.7173 11.616C17.4622 11.36 17.3342 11.0436 17.3333 10.6667ZM4 16V5.33333C4 4.95556 4.128 4.63911 4.384 4.384C4.64 4.12889 4.95644 4.00089 5.33333 4H13.3333C13.7111 4 14.028 4.128 14.284 4.384C14.54 4.64 14.6676 4.95644 14.6667 5.33333V16C14.6667 16.3778 14.5387 16.6947 14.2827 16.9507C14.0267 17.2067 13.7102 17.3342 13.3333 17.3333H5.33333C4.95556 17.3333 4.63911 17.2053 4.384 16.9493C4.12889 16.6933 4.00089 16.3769 4 16ZM17.3333 26.6667V16C17.3333 15.6222 17.4613 15.3058 17.7173 15.0507C17.9733 14.7956 18.2898 14.6676 18.6667 14.6667H26.6667C27.0444 14.6667 27.3613 14.7947 27.6173 15.0507C27.8733 15.3067 28.0009 15.6231 28 16V26.6667C28 27.0444 27.872 27.3613 27.616 27.6173C27.36 27.8733 27.0436 28.0009 26.6667 28H18.6667C18.2889 28 17.9724 27.872 17.7173 27.616C17.4622 27.36 17.3342 27.0436 17.3333 26.6667ZM4 26.6667V21.3333C4 20.9556 4.128 20.6391 4.384 20.384C4.64 20.1289 4.95644 20.0009 5.33333 20H13.3333C13.7111 20 14.028 20.128 14.284 20.384C14.54 20.64 14.6676 20.9564 14.6667 21.3333V26.6667C14.6667 27.0444 14.5387 27.3613 14.2827 27.6173C14.0267 27.8733 13.7102 28.0009 13.3333 28H5.33333C4.95556 28 4.63911 27.872 4.384 27.616C4.12889 27.36 4.00089 27.0436 4 26.6667ZM6.66667 14.6667H12V6.66667H6.66667V14.6667ZM20 25.3333H25.3333V17.3333H20V25.3333ZM20 9.33333H25.3333V6.66667H20V9.33333ZM6.66667 25.3333H12V22.6667H6.66667V25.3333Z" fill="#040404"/>
+</svg>
+
+<span class="text"> Dashboard </span>         </a>
+        </li>
+        <li>
+          <a href="../html-files/appoinment.html" class="nav-link link-body-emphasis">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.0003 13.3337C18.9458 13.3337 21.3337 10.9458 21.3337 8.00033C21.3337 5.05481 18.9458 2.66699 16.0003 2.66699C13.0548 2.66699 10.667 5.05481 10.667 8.00033C10.667 10.9458 13.0548 13.3337 16.0003 13.3337Z" stroke="#040404" stroke-width="1.8"/>
+<path d="M24.0003 26.6667C26.9458 26.6667 29.3337 24.2789 29.3337 21.3333C29.3337 18.3878 26.9458 16 24.0003 16C21.0548 16 18.667 18.3878 18.667 21.3333C18.667 24.2789 21.0548 26.6667 24.0003 26.6667Z" stroke="#040404" stroke-width="1.8"/>
+<path d="M22.2227 21.3338L23.3333 22.6671L25.7773 20.1484" stroke="#040404" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.0002 17.77C18.6871 17.4768 17.3455 17.3305 16.0002 17.334C10.1095 17.334 5.3335 20.0207 5.3335 23.334C5.3335 26.6474 5.3335 29.334 16.0002 29.334C23.5828 29.334 25.7748 27.9767 26.4095 26.0007" stroke="#040404" stroke-width="1.8"/>
+</svg><span class="text"> Appointments</span>
+          </a>
+        </li>
+        <li>
+          <a href="./doctor's.html" class="nav-link link-body-emphasis">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26.6668 29.334V25.334C26.6668 21.5633 26.6668 19.6767 25.4948 18.506C24.3242 17.334 22.4375 17.334 18.6668 17.334L16.0002 20.0007L13.3335 17.334C9.56283 17.334 7.67616 17.334 6.5055 18.506C5.3335 19.6767 5.3335 21.5633 5.3335 25.334V29.334M21.3335 17.334V24.6673" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.3337 17.3337V22.667M11.3337 22.667C12.0409 22.667 12.7192 22.9479 13.2193 23.448C13.7194 23.9481 14.0003 24.6264 14.0003 25.3337V26.667M11.3337 22.667C10.6264 22.667 9.94814 22.9479 9.44804 23.448C8.94794 23.9481 8.66699 24.6264 8.66699 25.3337V26.667M20.667 8.66699V7.33366C20.667 6.72082 20.5463 6.11399 20.3118 5.5478C20.0772 4.98162 19.7335 4.46717 19.3002 4.03383C18.8668 3.60049 18.3524 3.25674 17.7862 3.02222C17.22 2.7877 16.6132 2.66699 16.0003 2.66699C15.3875 2.66699 14.7807 2.7877 14.2145 3.02222C13.6483 3.25674 13.1338 3.60049 12.7005 4.03383C12.2672 4.46717 11.9234 4.98162 11.6889 5.5478C11.4544 6.11399 11.3337 6.72082 11.3337 7.33366V8.66699C11.3337 9.27983 11.4544 9.88666 11.6889 10.4528C11.9234 11.019 12.2672 11.5335 12.7005 11.9668C13.1338 12.4002 13.6483 12.7439 14.2145 12.9784C14.7807 13.213 15.3875 13.3337 16.0003 13.3337C16.6132 13.3337 17.22 13.213 17.7862 12.9784C18.3524 12.7439 18.8668 12.4002 19.3002 11.9668C19.7335 11.5335 20.0772 11.019 20.3118 10.4528C20.5463 9.88666 20.667 9.27983 20.667 8.66699Z" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.3335 25.667C22.3335 25.9322 22.2281 26.1866 22.0406 26.3741C21.8531 26.5616 21.5987 26.667 21.3335 26.667C21.0683 26.667 20.8139 26.5616 20.6264 26.3741C20.4389 26.1866 20.3335 25.9322 20.3335 25.667C20.3335 25.4018 20.4389 25.1474 20.6264 24.9599C20.8139 24.7723 21.0683 24.667 21.3335 24.667C21.5987 24.667 21.8531 24.7723 22.0406 24.9599C22.2281 25.1474 22.3335 25.4018 22.3335 25.667Z" stroke="black" stroke-width="1.8"/>
+</svg>
+<span class="text">Doctor’s</span>
+          </a>
+        </li>
+        <li>
+          <a href="./Patient.html" class="nav-link link-body-emphasis">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.7867 23.6533C19.948 24.216 17.7507 25.3627 19.0893 26.7973C19.7427 27.4987 20.472 28 21.3867 28H26.6133C27.528 28 28.2573 27.4987 28.9107 26.7973C30.2493 25.3627 28.052 24.216 27.2133 23.6547C26.2653 23.0109 25.1459 22.6668 24 22.6668C22.8541 22.6668 21.7346 23.0096 20.7867 23.6533ZM26.6667 16.6667C26.6667 17.3739 26.3857 18.0522 25.8856 18.5523C25.3855 19.0524 24.7072 19.3333 24 19.3333C23.2927 19.3333 22.6145 19.0524 22.1144 18.5523C21.6143 18.0522 21.3333 17.3739 21.3333 16.6667C21.3333 15.9594 21.6143 15.2811 22.1144 14.781C22.6145 14.281 23.2927 14 24 14C24.7072 14 25.3855 14.281 25.8856 14.781C26.3857 15.2811 26.6667 15.9594 26.6667 16.6667Z" stroke="black" stroke-width="1.8"/>
+<path d="M13.3332 8H19.9998M13.3332 4H23.9998M9.33317 12.6667V18.6667C9.33317 19.924 9.33317 20.552 8.9425 20.9427C8.55184 21.3333 7.92384 21.3333 6.6665 21.3333H5.33317C4.07584 21.3333 3.44784 21.3333 3.05717 20.9427C2.6665 20.552 2.6665 19.924 2.6665 18.6667V15.3333C2.6665 14.076 2.6665 13.448 3.05717 13.0573C3.44784 12.6667 4.07584 12.6667 5.33317 12.6667H9.33317ZM9.33317 12.6667H15.9998" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.66634 6.66667C8.66634 7.37391 8.38539 8.05219 7.88529 8.55229C7.3852 9.05238 6.70692 9.33333 5.99967 9.33333C5.29243 9.33333 4.61415 9.05238 4.11406 8.55229C3.61396 8.05219 3.33301 7.37391 3.33301 6.66667C3.33301 5.95942 3.61396 5.28115 4.11406 4.78105C4.61415 4.28095 5.29243 4 5.99967 4C6.70692 4 7.3852 4.28095 7.88529 4.78105C8.38539 5.28115 8.66634 5.95942 8.66634 6.66667Z" stroke="black" stroke-width="1.8" fill="black"/>
+</svg>
+<span class="text">Patient</span>
+          </a>
+        </li>
+        <li>
+          <a href="./Prescription.html" class="nav-link link-body-emphasis">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.2536 2.75293H8.74691C7.86361 2.75539 7.01719 3.10737 6.39261 3.73196C5.76802 4.35655 5.41604 5.20297 5.41357 6.08626V25.9129C5.41604 26.7962 5.76802 27.6426 6.39261 28.2672C7.01719 28.8918 7.86361 29.2438 8.74691 29.2463H23.2536C24.1376 29.2463 24.9855 28.8951 25.6106 28.27C26.2357 27.6448 26.5869 26.797 26.5869 25.9129V6.08626C26.5869 5.20221 26.2357 4.35436 25.6106 3.72924C24.9855 3.10412 24.1376 2.75293 23.2536 2.75293ZM25.2536 25.9129C25.2536 26.4434 25.0429 26.9521 24.6678 27.3271C24.2927 27.7022 23.784 27.9129 23.2536 27.9129H8.74691C8.21647 27.9129 7.70777 27.7022 7.33269 27.3271C6.95762 26.9521 6.74691 26.4434 6.74691 25.9129V8.67293H25.2536V25.9129Z" fill="#040404"/>
+<path d="M10.0651 12.6751C9.88829 12.6751 9.71872 12.6049 9.5937 12.4799C9.46868 12.3548 9.39844 12.1853 9.39844 12.0085C9.39844 11.8317 9.46868 11.6621 9.5937 11.5371C9.71872 11.412 9.88829 11.3418 10.0651 11.3418H21.9438C22.1206 11.3418 22.2902 11.412 22.4152 11.5371C22.5402 11.6621 22.6104 11.8317 22.6104 12.0085C22.6104 12.1853 22.5402 12.3548 22.4152 12.4799C22.2902 12.6049 22.1206 12.6751 21.9438 12.6751H10.0651ZM10.0651 16.6751C9.88829 16.6751 9.71872 16.6049 9.5937 16.4799C9.46868 16.3548 9.39844 16.1853 9.39844 16.0085C9.39844 15.8317 9.46868 15.6621 9.5937 15.5371C9.71872 15.412 9.88829 15.3418 10.0651 15.3418H18.7318C18.9086 15.3418 19.0782 15.412 19.2032 15.5371C19.3282 15.6621 19.3984 15.8317 19.3984 16.0085C19.3984 16.1853 19.3282 16.3548 19.2032 16.4799C19.0782 16.6049 18.9086 16.6751 18.7318 16.6751H10.0651ZM10.0878 24.4991C9.91096 24.4991 9.74139 24.4289 9.61637 24.3039C9.49134 24.1788 9.4211 24.0093 9.4211 23.8325C9.4211 23.6557 9.49134 23.4861 9.61637 23.3611C9.74139 23.236 9.91096 23.1658 10.0878 23.1658H14.4224C14.5992 23.1658 14.7688 23.236 14.8938 23.3611C15.0189 23.4861 15.0891 23.6557 15.0891 23.8325C15.0891 24.0093 15.0189 24.1788 14.8938 24.3039C14.7688 24.4289 14.5992 24.4991 14.4224 24.4991H10.0878Z" fill="black"/>
+</svg>
+<span class="text">Prescription</span>
+          </a>
+        </li>
+        <li>
+          <a href="./invoicelist.html" class="nav-link link-body-emphasis">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 3V29H26V9.6L25.7 9.3L19.7 3.3L19.4 3H6ZM8 5H18V11H24V27H8V5ZM20 6.4L22.6 9H20V6.4ZM10 13V15H22V13H10ZM10 18V20H17V18H10ZM19 18V20H22V18H19ZM10 22V24H17V22H10ZM19 22V24H22V22H19Z" fill="black"/>
+</svg>
+<span class="text">Invoice</span>
+          </a>
+        </li>
+           <li class="nav-item">
+
+  <!-- Main Reports Button -->
+  <a 
+    class="nav-link link-body-emphasis d-flex justify-content-between align-items-center"
+    data-bs-toggle="collapse"
+    href="#reportsMenu"
+    role="button"
+    aria-expanded="false"
+  >
+    <div class="d-flex align-items-center gap-2">
+      <!-- Your Same SVG Here -->
+      <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.66699 23.333V19.333M15.3337 23.333V11.333M22.0003 23.333V17.9997"
+                    stroke="black"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M28.667 7.33301C28.667 8.39387 28.2456 9.41129 27.4954 10.1614C26.7453 10.9116 25.7279 11.333 24.667 11.333C23.6061 11.333 22.5887 10.9116 21.8386 10.1614C21.0884 9.41129 20.667 8.39387 20.667 7.33301C20.667 6.27214 21.0884 5.25473 21.8386 4.50458C22.5887 3.75444 23.6061 3.33301 24.667 3.33301C25.7279 3.33301 26.7453 3.75444 27.4954 4.50458C28.2456 5.25473 28.667 6.27214 28.667 7.33301Z"
+                    stroke="black"
+                    stroke-width="1.8"
+                  />
+                  <path
+                    d="M28.6615 14.6663C28.6615 14.6663 28.6668 15.1197 28.6668 15.9997C28.6668 21.9703 28.6668 24.957 26.8122 26.8117C24.9575 28.6663 21.9722 28.6663 16.0002 28.6663C10.0295 28.6663 7.04283 28.6663 5.18816 26.8117C3.3335 24.957 3.3335 21.9717 3.3335 15.9997C3.3335 10.029 3.3335 7.04367 5.18816 5.18767C7.04283 3.33301 10.0282 3.33301 16.0002 3.33301H17.3335"
+                    stroke="black"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+      <span class="text">Reports</span>
+    </div>
+
+    <!-- Arrow -->
+    <span class="ms-auto">▾</span>
+  </a>
+
+  <!-- Dropdown Items -->
+  <div class="collapse ps-4" id="reportsMenu">
+    <ul class="btn-toggle-nav list-unstyled fw-normal small">
+
+      <li>
+        <a href="./revenuereport.html" class="nav-link link-body-emphasis">
+          Revenue Report
+        </a>
+      </li>
+
+      <li>
+        <a href="./paymentpendingreport.html" class="nav-link link-body-emphasis">
+          Payment Report
+        </a>
+      </li>
+
+      <li>
+        <a href="./appoinmentreport.html" class="nav-link link-body-emphasis">
+          Appointment Report
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+</li>
+        <li>
+          <a href="./sytemsetting.html" class="nav-link link-body-emphasis">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M30 24V22H27.899C27.7693 21.3743 27.5208 20.7792 27.167 20.247L28.657 18.757L27.243 17.343L25.753 18.833C25.2208 18.4792 24.6257 18.2307 24 18.101V16H22V18.101C21.3743 18.2307 20.7792 18.4792 20.247 18.833L18.757 17.343L17.343 18.757L18.833 20.247C18.4792 20.7792 18.2307 21.3743 18.101 22H16V24H18.101C18.2307 24.6257 18.4792 25.2208 18.833 25.753L17.343 27.243L18.757 28.657L20.247 27.167C20.7792 27.5208 21.3743 27.7693 22 27.899V30H24V27.899C24.6257 27.7693 25.2208 27.5208 25.753 27.167L27.243 28.657L28.657 27.243L27.167 25.753C27.5208 25.2208 27.7693 24.6257 27.899 24H30ZM23 26C22.4067 26 21.8266 25.8241 21.3333 25.4944C20.8399 25.1648 20.4554 24.6962 20.2284 24.1481C20.0013 23.5999 19.9419 22.9967 20.0576 22.4147C20.1734 21.8328 20.4591 21.2982 20.8787 20.8787C21.2982 20.4591 21.8328 20.1734 22.4147 20.0576C22.9967 19.9419 23.5999 20.0013 24.1481 20.2284C24.6962 20.4554 25.1648 20.8399 25.4944 21.3333C25.8241 21.8266 26 22.4067 26 23C25.9992 23.7954 25.6829 24.558 25.1204 25.1204C24.558 25.6829 23.7954 25.9992 23 26Z" fill="black"/>
+<path d="M28 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V26C2 26.5304 2.21071 27.0391 2.58579 27.4142C2.96086 27.7893 3.46957 28 4 28H14V26H4V12H28V15H30V6C30 5.46957 29.7893 4.96086 29.4142 4.58579C29.0391 4.21071 28.5304 4 28 4ZM28 10H4V6H28V10Z" fill="black"/>
+<path d="M20 9C20.5523 9 21 8.55228 21 8C21 7.44772 20.5523 7 20 7C19.4477 7 19 7.44772 19 8C19 8.55228 19.4477 9 20 9Z" fill="black"/>
+<path d="M23 9C23.5523 9 24 8.55228 24 8C24 7.44772 23.5523 7 23 7C22.4477 7 22 7.44772 22 8C22 8.55228 22.4477 9 23 9Z" fill="black"/>
+<path d="M26 9C26.5523 9 27 8.55228 27 8C27 7.44772 26.5523 7 26 7C25.4477 7 25 7.44772 25 8C25 8.55228 25.4477 9 26 9Z" fill="black"/>
+</svg>
+<span class="text">System</span>
+          </a>
+        </li>
+      </ul>
+        <div class="sidebar-footer ">
+        <ul>
+        <li>
+          <a href="./sytemsetting.html" >
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.7722 2C18.9839 2.00001 19.1902 2.06721 19.3613 2.19193C19.5323 2.31664 19.6594 2.49244 19.7242 2.694L20.8242 6.112C21.2862 6.338 21.7282 6.592 22.1502 6.878L25.6622 6.122C25.8693 6.07779 26.085 6.10045 26.2784 6.18671C26.4718 6.27297 26.6328 6.41838 26.7382 6.602L29.5102 11.4C29.6161 11.5835 29.6609 11.7959 29.6383 12.0065C29.6156 12.2172 29.5267 12.4152 29.3842 12.572L26.9742 15.232C27.0093 15.7421 27.0093 16.2539 26.9742 16.764L29.3842 19.428C29.5267 19.5848 29.6156 19.7828 29.6383 19.9935C29.6609 20.2041 29.6161 20.4165 29.5102 20.6L26.7382 25.4C26.6325 25.5833 26.4714 25.7283 26.278 25.8141C26.0847 25.9 25.8691 25.9224 25.6622 25.878L22.1502 25.122C21.7302 25.406 21.2862 25.662 20.8262 25.888L19.7242 29.306C19.6594 29.5076 19.5323 29.6834 19.3613 29.8081C19.1902 29.9328 18.9839 30 18.7722 30H13.2282C13.0165 30 12.8103 29.9328 12.6392 29.8081C12.4681 29.6834 12.341 29.5076 12.2762 29.306L11.1782 25.89C10.7175 25.6647 10.2731 25.4074 9.84822 25.12L6.33822 25.878C6.13115 25.9222 5.91539 25.8996 5.72202 25.8133C5.52865 25.727 5.36765 25.5816 5.26222 25.398L2.49022 20.6C2.38437 20.4165 2.33953 20.2041 2.36218 19.9935C2.38482 19.7828 2.47378 19.5848 2.61622 19.428L5.02622 16.764C4.9913 16.2553 4.9913 15.7447 5.02622 15.236L2.61622 12.572C2.47378 12.4152 2.38482 12.2172 2.36218 12.0065C2.33953 11.7959 2.38437 11.5835 2.49022 11.4L5.26222 6.6C5.36794 6.41675 5.52907 6.27175 5.72241 6.18586C5.91576 6.09997 6.13136 6.07761 6.33822 6.122L9.84822 6.88C10.2722 6.594 10.7162 6.336 11.1782 6.11L12.2782 2.694C12.3428 2.49309 12.4693 2.31776 12.6396 2.1931C12.8098 2.06844 13.0152 2.00085 13.2262 2H18.7702H18.7722ZM18.0402 4H13.9602L12.8242 7.534L12.0582 7.908C11.6816 8.09226 11.3181 8.30209 10.9702 8.536L10.2622 9.016L6.63022 8.232L4.59022 11.768L7.08022 14.524L7.02022 15.372C6.99147 15.7902 6.99147 16.2098 7.02022 16.628L7.08022 17.476L4.58622 20.232L6.62822 23.768L10.2602 22.986L10.9682 23.464C11.3161 23.6979 11.6796 23.9077 12.0562 24.092L12.8222 24.466L13.9602 28H18.0442L19.1842 24.464L19.9482 24.092C20.3244 23.9082 20.6873 23.6983 21.0342 23.464L21.7402 22.986L25.3742 23.768L27.4142 20.232L24.9222 17.476L24.9822 16.628C25.0111 16.2092 25.0111 15.7888 24.9822 15.37L24.9222 14.522L27.4162 11.768L25.3742 8.232L21.7402 9.012L21.0342 8.536C20.6873 8.30166 20.3244 8.09182 19.9482 7.908L19.1842 7.536L18.0422 4H18.0402ZM16.0002 10C17.5915 10 19.1176 10.6321 20.2429 11.7574C21.3681 12.8826 22.0002 14.4087 22.0002 16C22.0002 17.5913 21.3681 19.1174 20.2429 20.2426C19.1176 21.3679 17.5915 22 16.0002 22C14.4089 22 12.8828 21.3679 11.7576 20.2426C10.6324 19.1174 10.0002 17.5913 10.0002 16C10.0002 14.4087 10.6324 12.8826 11.7576 11.7574C12.8828 10.6321 14.4089 10 16.0002 10ZM16.0002 12C14.9394 12 13.9219 12.4214 13.1718 13.1716C12.4216 13.9217 12.0002 14.9391 12.0002 16C12.0002 17.0609 12.4216 18.0783 13.1718 18.8284C13.9219 19.5786 14.9394 20 16.0002 20C17.0611 20 18.0785 19.5786 18.8286 18.8284C19.5788 18.0783 20.0002 17.0609 20.0002 16C20.0002 14.9391 19.5788 13.9217 18.8286 13.1716C18.0785 12.4214 17.0611 12 16.0002 12Z" fill="#040404"/>
+</svg>
+  <span class="text">Setting</span>
+          </a>
+        </li>
+        <li>
+          <a href="../html-files/index.html"
+   class="logout-btn d-flex align-items-center gap-2 px-5 py-2 rounded-3 text-decoration-none mt-4">
+  
+  <!-- ICON (SVG) -->
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.6667 10.6667L20.7867 12.5467L22.8933 14.6667H12V17.3333H22.8933L20.7867 19.44L22.6667 21.3333L28 16L22.6667 10.6667ZM6.66667 6.66667H16V4H6.66667C5.2 4 4 5.2 4 6.66667V25.3333C4 26.8 5.2 28 6.66667 28H16V25.3333H6.66667V6.66667Z" fill="white"/>
+</svg>
+
+
+  <!-- TEXT -->
+  <span class="logout-text">Logout</span>
+</a>
+
+        </li>
+      </ul>
+      </div>
+      </div>
+     
+    </div>
+
+     
+      
+    </div>
+  </div>
+
+</div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.getElementById("delete-btn").addEventListener("click", () => {
+        document.getElementById("propertyCard").classList.remove("show");
+      });
+    </script>
+    <script>
+      const currentPage = window.location.pathname.split("/").pop();
+  const links = document.querySelectorAll(".nav-link");
+
+  links.forEach(link => {
+    const linkPage = link.getAttribute("href").split("/").pop();
+
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+    }
+  });
+
+      const sidebar = document.querySelector(".sidebar");
+      const toggleBtn = document.getElementById("toggleBtn");
+
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("collapsed");
+
+        // change arrow direction
+        if (sidebar.classList.contains("collapsed")) {
+          toggleBtn.innerText = "»";
+        } else {
+          toggleBtn.innerText = "«";
+        }
+      });
+    </script>
+    <script>
+      const propertyCard = document.getElementById("propertyCard");
+      const editIcons = document.querySelectorAll(".edit");
+
+      editIcons.forEach((icon) => {
+        icon.addEventListener("click", (e) => {
+          e.stopPropagation();
+
+          // Get icon position
+          const rect = icon.getBoundingClientRect();
+
+          // Place card near clicked icon
+          propertyCard.style.top = rect.bottom + window.scrollY + "px";
+          propertyCard.style.left = rect.left + window.scrollX - 180 + "px";
+
+          // Show the card
+          propertyCard.classList.add("show");
+        });
+      });
+
+      // click outside close
+      document.addEventListener("click", () => {
+        propertyCard.classList.remove("show");
+      });
+    </script>
+  </body>
+</html>

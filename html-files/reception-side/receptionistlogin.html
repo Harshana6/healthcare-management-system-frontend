@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>receptionist-login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Forum&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playpen+Sans:wght@100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+   <div class="container mt-3">
+    <div class="row">
+         <div class="logo">
+        <img src="../../assets/image/Group 112.png" alt="">
+    </div>
+    </div>
+   </div>
+    <div class="admin-container receptionist container mt-3  w-50 px-5">
+       <div class="text-center mt-4">
+         <div class="admin-login mx-auto mb-2">
+            <img src="../../assets/image/image 18.png" alt="">
+        </div>
+         <h5>Receptionist Login</h5>
+       </div>
+      <div>
+         <label for="email" class="mb-2 mx-3">Email</label> <br>
+         <div class="input-container mb-3 ">
+   <div class="symbol px-3">
+    <img src="../../assets/image/ic_baseline-email.png" width="24" />
+</div>
+  <input type="email" class="w-100 px-5 " placeholder="Enter Email Address" id="email" >
+</div>
+<label for="password" class="mb-2 mx-3">Password</label> <br>
+ <div class="input-container ">
+   <div class="symbol px-3">
+    <img src="../../assets/image/gridicons_lock.png" width="24" />
+</div>
+  <input type="password" class="w-100 px-5 " placeholder="Enter Password" id="password" >
+  <div class="show-btn" id="show">show</div>
+
+</div>
+<div class="d-flex justify-content-end my-3 forgot-btn">
+    <a href="../forgotpass.html">Forgot Password</a>
+</div>
+  <div class="login-btn w-100 d-flex align-center justify-content-center p-2">
+   <a href="../reception-side/receptionapoinadd.html"> Login</a>
+  </div> 
+  
+  <div class="robo-container d-flex align-center justify-content-between w-50 mx-auto mt-4 p-2 ">
+    <div class="d-flex align-center  py-3">
+        <input type="checkbox" name="" id="" class="me-3">
+        <span>I’m not a robot</span>
+    </div>
+    <div class="captcha ">
+        <img src="../../assets/image/Frame 1478.png" alt="">
+    </div>
+  </div>
+  <div class="secure  text-center pt-3 ">
+ <div style="color: #3467D6;">
+       <img src="../../assets/image/marketeq_secure.png" alt="">
+    <span>Secure Login Enabled</span>
+ </div>
+    <div class="d-flex flex-wrap text-center check d-flex align-center justify-content-center gap-5 my-3">
+        <div><img src="../../assets/image/entypo_check.png" alt="">
+        <span>Verify to access the system</span></div>
+        <div>
+            <img src="../../assets/image/entypo_check.png" alt="">
+            <span>Your account is protected</span>
+        </div>
+    </div>
+  </div>
+      </div>
+    
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+        const showBtn = document.getElementById("show");
+  const passtext = document.getElementById("password");
+
+  showBtn.addEventListener("click", () => {
+    if (passtext.type === "password") {
+      passtext.type = "text";
+      showBtn.innerText = "Hide";
+    } else {
+      passtext.type = "password";
+      showBtn.innerText = "Show";
+    }
+  })
+    </script>
+</body>
+</html>
